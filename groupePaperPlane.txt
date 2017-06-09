@@ -1,0 +1,23 @@
+Groupe Marine, Mélysa, Natalia & Samuel
+
+
+// Fait:
+
+- Division Front / Back.
+	-Front: Natalia & Samuel
+	-Back: Marine & Mélysa
+
+-Front.
+	-Création de deux maquettes / logo / nom du "WeTransfer"
+	-En cours: création d'une animation pour l'envoi du fichier (Sam)
+	-En cours: Recherche de codes d'animations SVG
+
+-Back. (phase tests)
+	-Création et test de la zone drag&drop
+	-En cours: Envoi ajax
+	-En cours: Récupération des infos par le PHP 
+
+
+//A faire:
+
+- Dominer le monde

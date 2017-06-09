@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/css-test.css">
+    </head>
+    <body>
+
+        <form method="post" runat="server" enctype="multipart/form-data" novalidate>
+
+            <div class="box__input" id="sendform">
+                <input type="file" name="fichiers[]" id="fichier" class="box__file" data-multiple-caption="{count} files selected" multiple />
+                <label for="file"><span class="box__dragndrop"> Choisissez un fichier ou glissez-le dans la zone.</span></label>
+            </div>
+
+            <div class="mail__input">
+                <input type="text" class="mail" placeholder="votre email" id="auteur"> 
+            </div>
+
+            <div class="mail__input">
+                <input type="text" class="mail" placeholder=" L'email du destinataire" id="destinataire"> 
+            </div>
+
+            <div class="message__input">
+                <input type="text" placeholder="votre message" id="message">
+            </div>
+
+            <div class="button">
+                <button type="submit" class="box__button" id="sendbutton">Upload</button>
+            </div>
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="javascript/script-test.js" type="text/javascript"></script>
+    </body>
+</html>
