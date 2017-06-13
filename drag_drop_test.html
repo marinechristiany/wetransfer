@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/css-test.css">
+    </head>
+    <body>
+
+        <form method="post" runat="server" id="form" enctype="multipart/form-data" novalidate>
+
+            <div class="mail__input">
+                <input type="text" name="votreemail" class="mail" placeholder="votre email" id="votreemail" required> 
+            </div>
+
+            <div class="destemail__input" id="destemail">
+                <input type="text" name="destemail[]" class="mail" id="mail1" placeholder="email du destinataire" required>
+            </div>
+            <div class="add" id="add">
+                <button type="button" class="add__button" id="addbutton">Ajouter un nouveau destinataire</button>
+            </div>
+
+            <div class="message__input">
+                <textarea type="text" name="message" placeholder="votre message" id="message" required></textarea>
+            </div>
+
+            <div class="box__input" id="sendform">
+                <input type="file" value="" name="fichiers[]" id="files1" class="box__files multi" required/>
+            </div>
+
+            <div class="button">
+                <button type="submit" class="box__button submit" id="sendbutton">Envoyer</button>
+            </div>
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="javascript/script-test.js" type="text/javascript"></script>
+    </body>
+</html>
