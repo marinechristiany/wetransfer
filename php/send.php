@@ -114,8 +114,27 @@ if(is_dir('../fichiers/'.$dossier)){
     echo 'Le dossier &quot;upload/&quot; n&#039;existe pas.';
 }
 
+
+
+
+// ON EST ICI
+
+
+
+
 // je suppr l'image non zippée
-/*unlink($move);*/
+foreach($files as $file) {
+    if ($file->isDir()){
+        rmdir($file->getRealPath());
+    } else {
+        unlink($file->getRealPath());
+    }
+}
+rmdir($dir);
+
+
+
+
 
 // J'envoie l'email
 $url = "http://vesoul.codeur.online/front/bmelissa/wetransfer/fichiers/".$dossier.".zip";
