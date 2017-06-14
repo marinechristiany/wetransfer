@@ -410,3 +410,7 @@ h4 {
 /*    margin: auto;*/
     top: 50%;
 }
+
+.error{
+  background-color: #ee3e35 ;
+}
