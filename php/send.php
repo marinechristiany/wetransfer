@@ -7,6 +7,7 @@ $error = array();
 
 
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
@@ -57,13 +58,13 @@ if(empty($_POST['message'])){
     $error['message'] = false; //correctement rempli
 }
 
-if(empty($_POST['files'])){
+if(empty($_FILES['files1'])){
 
-    $error['files'] = true; //vide
+    $error['files1'] = true; //vide
 
 }else{
 
-    $error['files'] = false; //correctement rempli
+    $error['files1'] = false; //correctement rempli
 }
 
 $dossier = uniqid();
@@ -114,8 +115,29 @@ if(is_dir('../fichiers/'.$dossier)){
     echo 'Le dossier &quot;upload/&quot; n&#039;existe pas.';
 }
 
+
 // je suppr l'image non zippée
-/*unlink($move);*/
+
+
+$path = "/home/bmelissa/wetransfer/fichiers/".$dossier;
+
+function rrmdir($dir) { 
+   if (is_dir($dir)) { 
+     $objects = scandir($dir); 
+     foreach ($objects as $object) { 
+       if ($object != "." && $object != "..") { 
+         if (is_dir($dir."/".$object))
+           rrmdir($dir."/".$object);
+         else
+           unlink($dir."/".$object); 
+       } 
+     }
+     rmdir($dir); 
+   } 
+ }
+
+rrmdir($path);
+
 
 // J'envoie l'email
 $url = "http://vesoul.codeur.online/front/bmelissa/wetransfer/fichiers/".$dossier.".zip";

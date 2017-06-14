@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Paper Plane</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
+
+  
+</head>
+
+<body>
+
+  <h2>Paper Plane</h2>
+    <div class="trajectoire"></div>
+  <div class="rocket">
+   <div class="plane"><img src="images/red-plane.png" alt="image d'avion en papier" /></div>
+   <div class="ecran"><img src="images/ecran.png" alt="image d'un ecran d'ordinateur" /></div>
+    <div id="rocket-body">
+      
+<!--
+      <div class="fin fin-left"></div>
+      <div class="fin fin-right"></div>
+-->
+    </div>
+    <div class="exhaust-flame"></div>
+    <div class="fumees">
+        <ul class="exhaust-fumes">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul></div>
+      </div>
+    <div>
+        <ul class="star">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+           <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+    </div>
+  
+  <form method="post" runat="server" id="form" enctype="multipart/form-data" novalidate class="form-position">
+
+      <div class="box__input" id="sendform">
+        <input type="file" name="fichiers[]" id="files1" class="box__files btn-ajouter" value="Ajouter vos fichiers" required/>
+      </div>
+
+      <p>
+        <div class="destemail__input" id="destemail">
+            <label for="destinataire" class="label-text">les envoyer à:</label><br/>
+            <input type="text" name="destemail[]" class="mail champ" id="mail1" required>
+        </div>
+        <div class="add" id="add">
+            <button type="button" class="add__button" id="addbutton">+</button>
+        </div>
+      </p>
+
+      <p>
+        <div class="mail__input">
+          <label for="expediteur" class="label-text">de la part de:</label><br/>
+          <input type="text" name="votreemail" class="mail champ" id="votreemail" required> 
+        </div>
+      </p>
+
+      <p class="label-text">laisser un petit message</p>
+      <p>
+        <div class="message__input">
+          <textarea type="text" name="message" id="message" required></textarea>
+        </div>
+      </p>
+      
+      <div class="button">
+        <button type="submit" class="box__button submit btn-envoi" id="sendbutton" onclick="myMove();">Lancer</button>
+      </div>
+      
+      
+  </form>
+<!--
+   <footer>
+   <h4 class="credits">crédits OnlineFormapro 2017</h4>
+   </footer>
+-->
+  <div class="base"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="javascript/script-test.js" type="text/javascript"></script>
+
+<script>
+    function myMove() {
+      var elem = document.querySelector(".plane");
+      var pos = -255;
+      var id = setInterval(frame, 5);
+      function frame() {
+        if (pos == -1000) {
+          clearInterval(id);
+        } else {
+          pos--; 
+          elem.style.top = pos + 'px'; 
+        }
+      }
+    }
+</script>
+  
+  
+
+  
+<!--    <script src="js/index.js"></script>-->
+
+</body>
+</html>
